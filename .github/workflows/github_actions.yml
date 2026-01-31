@@ -2,12 +2,12 @@ name: Node.js Service Deployment
 on: [push]
 jobs:
   Deploy-with-Ansible:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
       - name: Run playbook
-        uses: dawidd6/action-ansible-playbook@<REF>
+        uses: dawidd6/action-ansible-playbook@v7
         with:
             playbook: node_service.yml
             directory: ./ansible
