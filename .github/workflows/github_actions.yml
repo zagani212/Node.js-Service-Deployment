@@ -1,0 +1,25 @@
+name: Node.js Service Deployment
+on: [push]
+jobs:
+  Deploy-with-Ansible:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@<REF>
+        with:
+            playbook: node_service.yml
+            directory: ./ansible
+            configuration: |
+                [defaults]
+                inventory      = ./inventory
+                sudo_user      = root
+
+                [privilege_escalation]
+                become=True
+                become_user=root
+            key: ${{secrets.SSH_PRIVATE_KEY}}
+            # Optional, literal inventory file contents
+            inventory: |
+                [server] 35.180.97.219 ansible_user=ubuntu
