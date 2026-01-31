@@ -33,7 +33,7 @@
   
   - name: Copy Systemd file
     ansible.builtin.copy:
-      src: ~/work/Node.js-Service-Deployment/systemd/app.service
+      src: ./systemd/app.service
       dest: /etc/systemd/system/app.service
       owner: root
       group: root
