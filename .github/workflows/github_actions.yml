@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v7
         with:
@@ -21,4 +22,5 @@ jobs:
             key: ${{secrets.SSH_PRIVATE_KEY}}
             # Optional, literal inventory file contents
             inventory: |
-                [server] 35.180.97.219 ansible_user=ubuntu
+                [server]
+                35.180.97.219 ansible_user=ubuntu
