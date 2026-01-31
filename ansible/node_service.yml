@@ -22,7 +22,7 @@
 
   - name: Clone project from github
     ansible.builtin.git:
-      repo: git@github.com:zagani212/Node.js-Service-Deployment.git
+      repo: https://github.com/zagani212/Node.js-Service-Deployment.git
       dest: ~/app/
 
   - name: Download node modules
