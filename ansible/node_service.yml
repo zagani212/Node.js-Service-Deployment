@@ -1,0 +1,21 @@
+---
+- hosts: server
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - name: Update package manager
+    ansible.builtin.command: sudo apt update
+  
+  - name: Upgrade package manager
+    ansible.builtin.command: sudo apt upgrade
+
+  - name: Install the package nodejs
+    ansible.builtin.command: sudo apt install nodejs -y
+  
+  - name: Check Node version 
+    ansible.builtin.command: node -v
+  
+  - name: Install npm 
+    ansible.builtin.command: sudo apt install npm -y
