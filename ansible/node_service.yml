@@ -33,7 +33,7 @@
   
   - name: Copy Systemd file
     ansible.builtin.copy:
-      src: ./systemd/app.service
+      src: ../systemd/app.service
       dest: /etc/systemd/system/app.service
       owner: root
       group: root
@@ -41,7 +41,7 @@
 
   - name: Make sure a service unit is enabled
     ansible.builtin.systemd_service:
-      state: enabled
+      enabled: true
       name: app.service
   
   - name: Make sure a service unit is running
