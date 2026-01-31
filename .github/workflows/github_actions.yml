@@ -13,7 +13,6 @@ jobs:
             directory: ./ansible
             configuration: |
                 [defaults]
-                inventory      = ./inventory
                 sudo_user      = root
 
                 [privilege_escalation]
