@@ -2,7 +2,7 @@ name: Node.js Service Deployment
 on: [push]
 jobs:
   Deploy-with-Ansible:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
