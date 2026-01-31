@@ -19,3 +19,14 @@
   
   - name: Install npm 
     ansible.builtin.command: sudo apt install npm -y
+
+  - name: Clone project from github
+    ansible.builtin.git:
+      repo: git@github.com:zagani212/Node.js-Service-Deployment.git
+      dest: ~/app/
+
+  - name: Download node modules
+    ansible.builtin.command: cd ~/app/Node.js-Service-Deployment/app && npm i  
+  
+  - name: Start server
+    ansible.builtin.command: cd ~/app/Node.js-Service-Deployment/app && npm run start
