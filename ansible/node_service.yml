@@ -19,6 +19,9 @@
   
   - name: Install npm 
     ansible.builtin.command: sudo apt install npm -y
+  
+  - name: Create app directory 
+    ansible.builtin.command: mkdir ~/app -p
 
   - name: Clone project from github
     ansible.builtin.git:
