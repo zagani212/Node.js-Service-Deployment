@@ -21,15 +21,15 @@
     ansible.builtin.command: sudo apt install npm -y
   
   - name: Create app directory 
-    ansible.builtin.command: mkdir ~/app -p
+    ansible.builtin.command: mkdir ~/work -p
 
   - name: Clone project from github
     ansible.builtin.git:
       repo: https://github.com/zagani212/Node.js-Service-Deployment.git
-      dest: ~/app/
+      dest: ~/work/Node.js-Service-Deployment
 
   - name: Download node modules
-    ansible.builtin.command: chdir=~/app/Node.js-Service-Deployment/app && npm i  
+    ansible.builtin.command: chdir=~/work/Node.js-Service-Deployment/app && npm i  
   
   - name: Start server
-    ansible.builtin.command: chdir=~/app/Node.js-Service-Deployment/app && npm run start
+    ansible.builtin.command: chdir=~/work/Node.js-Service-Deployment/app && npm run start
